@@ -70,7 +70,8 @@
                                                     <div class="form-group">
                                                         <label class="form-label required">Name
                                                         </label>
-                                                        <input type="text" class="form-control" name="name" value="{{$user->name}}">
+                                                        <input type="text" class="form-control" name="name"
+                                                            value="{{ $user->name }}">
 
                                                     </div>
                                                 </div>
@@ -78,7 +79,8 @@
                                                     <div class="form-group">
                                                         <label class="form-label required">Email
                                                         </label>
-                                                        <input type="email" class="form-control " name="email" value="{{$user->email}}">
+                                                        <input type="email" class="form-control " name="email"
+                                                            value="{{ $user->email }}">
 
                                                     </div>
                                                 </div>
@@ -94,8 +96,8 @@
                                                     <div class="form-group">
                                                         <label class="form-label required">Phone Number
                                                             </span></label>
-                                                        <input type="text" class="form-control " name="phone_number" value="{{$user->phone_number}}"
-                                                            placeholder="123456">
+                                                        <input type="text" class="form-control " name="phone_number"
+                                                            value="{{ $user->phone_number }}" placeholder="123456">
 
                                                     </div>
                                                 </div>
@@ -103,7 +105,8 @@
                                                     <div class="form-group">
                                                         <label class="form-label required">Gender
                                                         </label>
-                                                        <select class="form-control" name="gender" value="{{$user->gender}}">
+                                                        <select class="form-control" name="gender"
+                                                            value="{{ $user->gender }}">
                                                             <option selected disabled>Select Gender</option>
                                                             <option value="male">Male</option>
                                                             <option value="female">Female</option>
@@ -114,7 +117,8 @@
                                                     <div class="form-group">
                                                         <label class="form-label required">Address
                                                             </span></label>
-                                                        <input type="text" class="form-control " name="address" value="{{$user->address}}">
+                                                        <input type="text" class="form-control " name="address"
+                                                            value="{{ $user->address }}">
 
                                                     </div>
                                                 </div>
@@ -122,20 +126,25 @@
                                                     <div class="form-group">
                                                         <label class="form-label required">City
                                                             </span></label>
-                                                        <input type="text" class="form-control " name="city" value="{{$user->city}}">
+                                                        <input type="text" class="form-control " name="city"
+                                                            value="{{ $user->city }}">
 
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6 col-md-6">
+                                                <div class="col-sm-6 col-md-6 col-lg-6">
                                                     <div class="form-group">
                                                         <label class="form-label required">Country
                                                             </span></label>
-                                                        <input type="text" class="form-control " name="country" value="{{$user->country}}">
+                                                        <input type="text" class="form-control " name="country"
+                                                            value="{{ $user->country }}">
 
                                                     </div>
                                                 </div>
                                                 <div class="d-flex justify-content-end pt-4">
-
+                                                    <!--begin::Button-->
+                                                    <a href="{{ route('user.indexx') }}" id="kt_ecommerce_add_product_cancel"
+                                                        class="btn btn-outline-danger me-5">Cancel</a>
+                                                    <!--end::Button-->
                                                     <!--begin::Button-->
                                                     <button type="submit" class="btn btn-success">
                                                         <span class="indicator-label">Create User</span>

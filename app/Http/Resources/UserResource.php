@@ -23,7 +23,7 @@ class UserResource extends JsonResource
                 'gender' => $this->gender,
                 'address' => $this->address,
                 'city' => $this->city,
-                'country' => $this->country,
+                'country' => $this->country
 
             ];
     }
