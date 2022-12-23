@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::view('', 'admin.dashboard.index')->name('admin.dashboard');
 
-
 Route::controller( UserController::class)
     ->prefix('admin/user')
     ->name('user.')
