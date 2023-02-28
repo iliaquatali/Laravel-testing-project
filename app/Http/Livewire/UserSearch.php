@@ -13,7 +13,7 @@ class UserSearch extends Component
     {
         return view('livewire.user-search',[
             'users'=>User::when($this->term,function($query, $term){
-                return $query->where('title','LIKE',"%$term%")->orWhere('dody','LIKE',"%$term%");
+                return $query->where('name','LIKE',"%$term%")->orWhere('gender','LIKE',"%$term%");
             })->paginate(5)
         ]);
     }

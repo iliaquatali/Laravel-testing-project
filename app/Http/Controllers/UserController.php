@@ -17,11 +17,10 @@ class UserController extends Controller
      *
      * @return View
      */
-    public function index():View
+    public function index(): View
     {
-        $user = User::paginate(5);
         $users = User::all();
-        return view('admin.user.index')->with('users' , $users);
+        return view('admin.user.index')->with('users', $users);
     }
 
     /**
@@ -29,7 +28,7 @@ class UserController extends Controller
      *
      * @return View
      */
-    public function create():View
+    public function create(): View
     {
         return view('admin.user.create');
     }
@@ -42,17 +41,15 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        try{
+        try {
             $users = User::create($request->validated());
-            if($users)
-            {
+            if ($users) {
                 return redirect()->route('user.index');
-            }
-            else{
+            } else {
                 return back();
             }
-         }catch (Exception $ex) {
-             return back()->withError($ex->getMessage());
+        } catch (Exception $ex) {
+            return back()->withError($ex->getMessage());
         }
     }
 
@@ -85,7 +82,7 @@ class UserController extends Controller
      * @param  User $user
      * @return RedirectResponse
      */
-    public function update(UpdateUserRequest $request, User $user):RedirectResponse
+    public function update(UpdateUserRequest $request, User $user): RedirectResponse
     {
         try {
             $user = $user->update($request->validated());
@@ -103,7 +100,7 @@ class UserController extends Controller
      * @param  User $user
      * @return RedirectResponse
      */
-    public function destroy(User $user):RedirectResponse
+    public function destroy(User $user): RedirectResponse
     {
         try {
             $is_deleted = $user->delete();
@@ -114,7 +111,6 @@ class UserController extends Controller
             }
         } catch (Exception $ex) {
             return back()->withError($ex->getMessage(__('Something wrong')));
-            
         }
     }
 }
